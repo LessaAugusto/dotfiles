@@ -1,0 +1,43 @@
+config defaultToCurrentScreen true
+
+### Positions
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+
+### Layouts
+
+# Mobile Programming
+layout mobile 'iTerm2' push left bar-resize:screenSizeX*0.725 | push right bar-resize:screenSizeX*0.725
+layout mobile 'Google Chrome' move screenOriginX+screenSizeX*0.725;screenOriginY screenSizeX*0.275;screenSizeY
+layout ios 'iTerm2' push left bar-resize:screenSizeX*0.725 | push right bar-resize:screenSizeX*0.725
+layout ios 'Simulator' move screenOriginX+screenSizeX*0.725;screenOriginY screenSizeX*0.275;screenSizeY
+layout all_full 'iTerm2' ${full}
+layout all_full 'Google Chrome' ${full}
+
+# Key Combination
+alias main_key ctrl;cmd
+
+#Shortcut to Focus on certain apps
+bind c:${main_key} focus 'Google Chrome'
+bind p:${main_key} focus 'iTerm2'
+bind e:${main_key} focus 'Evernote'
+bind s:${main_key} focus 'Slack'
+bind t:${main_key} focus 'Trello'
+bind x:${main_key} focus 'Xcode'
+bind i:${main_key} focus 'Simulator'
+
+# Dev Modes
+bind ]:${main_key} chain focus 'Google Chrome' | focus 'iTerm2'
+
+# Layout bindings
+bind m:${main_key} layout mobile
+bind q:${main_key} layout ios
+bind n:${main_key} layout all_full
+bind k:${main_key} ${full}
+bind l:${main_key} ${righthalf}
+bind h:${main_key} ${lefthalf}
+
+# Monitor switching bindings
+bind right:alt,ctrl throw 1 resize
+bind left:alt,ctrl throw 0 resize

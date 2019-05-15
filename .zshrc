@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/facta/.oh-my-zsh
+export ZSH=/Users/$USER/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -10,6 +10,8 @@ export ZSH=/Users/facta/.oh-my-zsh
 # ZSH_THEME="robbyrussell"
 POWERLEVEL9K_MODE='awesome-patched'
 ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(node_version rvm ram)
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -18,9 +20,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # An empty array have no effect
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-DEFAULT_USER=facta
-
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+DEFAULT_USER=$USER
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -65,7 +65,7 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git colorize ruby bundler zsh-autosuggestions zsh-nvm
+  git colorize ruby bundler zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -99,11 +99,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# ruby colorls
-source $(dirname $(gem which colorls))/tab_complete.sh
-
-alias lc='colorls -A'
-alias tree='colorls -A --tree'
 
 eval "$(direnv hook zsh)"
