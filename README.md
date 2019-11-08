@@ -2,15 +2,16 @@
 
 ## Before running
 
-Make sure you've got iTerm2 installed before running the script. After that, open iTerm, clone this repo, cd into the directory and run `./init.sh`
+Make sure you've got iTerm2 installed before running the script. After that, open iTerm, clone this repo, cd into the directory and run `./init.sh`.
+If you don't have it installed, run `brew cask install iterm2`.
 
 ## Description of the script
 
 The script will:
-* download and install Oh My ZShell
-* download and install powerlevel9k
-* download and install syntax highlighting for oh-my-zsh
-* remove default `.zshrc` and link it to the one in this repo
+* Download and install Oh My ZShell.
+* Download and install powerlevel9k.
+* Download and install syntax highlighting for oh-my-zsh.
+* Remove default `.zshrc` and link it to the one in this repo.
 
 ## Making it work like a charm
 
@@ -34,11 +35,11 @@ Installing a patched font will mess up the integrated terminal in VS Code
 unless you use the proper settings. You'll need to go to settings (CMD + ,) and
 add or edit the following values:
 
-* for Droid Font Awesome: `"terminal.integrated.fontFamily": "Droid Sans Mono Awesome"`
-* for Source Code Pro: `"terminal.integrated.fontFamily": "Source Code Pro for Powerline"`
-* for Meslo: `"terminal.integrated.fontFamily": "Meslo LG M for Powerline"`
-* for other fonts you'll need to check the font name in Font Book.
-* You can also set the fontsize e.g.: "terminal.integrated.fontSize": 14
+* For Droid Font Awesome: `"terminal.integrated.fontFamily": "Droid Sans Mono Awesome"`
+* For Source Code Pro: `"terminal.integrated.fontFamily": "Source Code Pro for Powerline"`
+* For Meslo: `"terminal.integrated.fontFamily": "Meslo LG M for Powerline"`
+* For other fonts you'll need to check the font name in Font Book.
+* You can also set the fontsize e.g.: "terminal.integrated.fontSize": 14.
 
 ## Credits
 
